@@ -4,7 +4,7 @@ import { Animated, View, Text } from 'react-native';
 class AnimatedBar extends Component {
     constructor(props) {
         super(props);
-        this._width = new Animated.Value(0);
+        this._height = new Animated.Value(0);
     }
 
     componentDidMount() {
@@ -18,7 +18,7 @@ class AnimatedBar extends Component {
     animateTo = (delay, value) => {
         Animated.sequence([
             Animated.delay(delay),
-            Animated.timing(this._width, {
+            Animated.timing(this._height, {
                 toValue: value,
             }),
         ]).start();
@@ -27,7 +27,7 @@ class AnimatedBar extends Component {
     render() {
         const barStyles = {
             backgroundColor: '#1ABC9C',
-            height: this._width,
+            height: this._height,
             borderTopRightRadius: 3,
             borderTopLeftRadius: 3,
             width: 20,
